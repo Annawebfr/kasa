@@ -35,9 +35,9 @@
   
   .route {
     font-size: 1.7em;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
-    @include font-setup("Montserrat", 1.7em, 600, #000);
+    @include font-setup("Montserrat", 1.7em, 500, #000);
   
     &:hover {
       text-decoration: underline;
