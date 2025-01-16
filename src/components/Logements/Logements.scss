@@ -1,0 +1,221 @@
+@mixin flex($direction: column, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin font-setup($family: "Montserrat", $size: 1em, $weight: normal, $color: #333) {
+    font-family: $family, sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+  }
+  
+  .logement {
+    width: 90%;
+    padding: 20px;
+    margin: -18px auto;
+  }
+  
+  .slideshow {
+    width: 100%;
+    @include flex();
+  
+    img {
+      height: 530px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  }
+  
+  .listInfo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: -10px;
+  }
+  
+  .info {
+    margin-top: -5px;
+  
+    .title {
+      font-size: 2.4em;
+      color: #ff6f61;
+      font-weight: 600;
+      @include font-setup("Montserrat", 2.4em, 600, #ff6f61);
+    }
+  
+    .country {
+      font-size: 1.2em;
+      font-weight: 500;
+      margin-top: -31px;
+      @include font-setup("Montserrat", 1.2em, 500, #000000);
+    }
+  
+    .tags {
+      margin-top: 5px;
+  
+      .tag {
+        display: inline-block;
+        background: #ff6f61;
+        color: white;
+        font-size: 1.1em;
+        padding: 5px 35px;
+        margin-right: 12px;
+        border-radius: 9px;
+        text-align: center;
+        margin-top: 10px;
+        font-weight: 600;
+        @include font-setup("Montserrat", 1.1em, 600, #ffffff);
+      }
+    }
+  }
+  
+  .host {
+    width: 190px;
+    margin-top: 10px;
+    @include flex(column, flex-end);
+  
+    .identity {
+      @include flex(row, space-between);
+  
+      .name {
+        width: 55%;
+        line-height: 32px;
+        font-size: 1.4em;
+        color: #ff6f61;
+        font-weight: 500;
+        text-align: right;
+        @include font-setup("Montserrat", 1.4em, 500, #ff6f61);
+      }
+  
+      .people {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  
+    .rating {
+      display: flex;
+      column-gap: 5px;
+      margin-top: 4px;
+  
+      .fa-star {
+        font-size: 1.4em;
+        margin-right: 3px;
+      }
+  
+      .filled {
+        color: #ff6f61;
+      }
+  
+      .empty {
+        color: #e0e0e0;
+      }
+    }
+  }
+  
+  .listDescribe {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+    margin: 40px 0 60px;
+  }
+  
+  @media screen and (max-width: 920px) {
+    .tags .tag {
+      margin-top: 15px;
+    }
+  }
+  
+  @media screen and (max-width: 650px) {
+    .listInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; 
+      width: 100%; 
+      
+      .host {
+        display: flex;
+        flex-direction: row; 
+        margin-bottom: -20px;
+        justify-content: space-between; 
+        align-items: center; 
+        text-align: left; 
+        width: 100%; 
+        gap: 10px; 
+      }
+  
+      .rating {
+        order: 1; 
+        display: flex;
+        justify-content: flex-start; 
+        margin-right: auto; 
+        
+        .fa-star {
+          font-size: 1.2em;
+          margin-right: -3px;
+        }
+      }
+  
+      .identity {
+        order: 2; 
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: flex-end; 
+        text-align: right; 
+      }
+  
+      .identity .name {
+        margin-right: 10px; 
+      }
+  
+      .identity .people {
+        width: 70px; 
+        height: 70px; 
+        border-radius: 50%; 
+        object-fit: cover; 
+      }
+    }
+  
+    .listDescribe {
+      gap: 32px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  @media screen and (max-width: 425px) {
+    .listInfo 
+      
+      .host {
+        padding: 5px;
+  
+        .identity {
+          
+          .name {
+            font-size: 1.0em;
+            line-height: 22px;
+            margin-right: 12px;
+          }
+  
+          .people {
+            height: 60px;
+            width: 60px;
+          }
+        }
+        .rating 
+          .fa-star {
+            font-size: 1.1em;
+            margin-left: 0px;
+        }
+      }
+  }
