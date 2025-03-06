@@ -81,7 +81,7 @@
     width: 51%;
 
     p {
-      font-size: 1.2em;
+      font-size: 18px;;
     }
   }
 }
@@ -96,9 +96,9 @@
 }
 
 @media screen and (max-width: 375px) {
-  .card {
-    /** height: 300px;
+  /** .card {
+    height: 300px;
     width: 335px;
-height: 255px;**/
-  }
+height: 255px;
+  }**/
 }
