@@ -23,7 +23,7 @@
     @include flex();
   
     img {
-     height: 530px;
+     height: 415px;
       width: 100%;
       object-fit: cover;
       border-radius: 15px;
@@ -194,7 +194,12 @@
   }
   
   @media screen and (max-width: 425px) {
-    .listInfo 
+    .listInfo {
+    display: flex;
+      flex-direction: column;
+      gap: 10px; 
+      width: 100%; 
+    
       
       .host {
         padding: 5px;
@@ -219,3 +224,5 @@
         }
       }
   }
+}
+
